@@ -16,7 +16,8 @@
     "test:front": "jest",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "test:e2e": "cypress run"
+    "test:e2e": "cypress run",
+    "start:test": "cd ../BlogListApp && npm run start:test"
   },
   "eslintConfig": {
     "extends": [

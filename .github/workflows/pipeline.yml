@@ -55,9 +55,7 @@ jobs:
           project: ./BlogListFront
           command: npm run test:e2e
           browser: chrome
-          start: |
-            cd BlogListApp && npm run start:test
-            cd BlogListFront && npm start
+          start: npm run start:test
           wait-on: http://localhost:3003
 
   version_numbering:
