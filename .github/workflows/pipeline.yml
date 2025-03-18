@@ -58,7 +58,7 @@ jobs:
           wait-on: http://localhost:3003
 
   version_numbering:
-    needs: [blogs_backend_pipeline]
+    needs: [blogs_deploy_pipeline]
     if: ${{ (github.ref_name == 'main') }}
     runs-on: ubuntu-20.04
     steps:
