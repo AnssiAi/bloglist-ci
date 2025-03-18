@@ -59,7 +59,7 @@ jobs:
           working-directory: ./BlogListFront
           command: npm run test:e2e
           start: npm start
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://localhost:3000, http://localhost:3003'
 
   version_numbering:
     needs: [blogs_deploy_pipeline]
