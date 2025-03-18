@@ -38,6 +38,13 @@ jobs:
           node-version: '20'
       - name: Install Backend dependencies
         run: cd BlogListApp && npm install
+      - name: Create Backend env file
+        run: |
+          touch .env
+          echo PORT=3003 >> .env
+          echo SECRET=${{ secrets.BLOG_SECRET }} > .env
+          echo TEST_MONGODB_URI=${{ secrets.TEST_MONGODB_URI }} > .env
+          cat .env
       - name: Check Backend Linting
         run: cd BlogListApp && npm run lint
       - name: Backend Unit Tests
