@@ -51,9 +51,9 @@ jobs:
       - name: Frontend e2e tests
         uses: cypress-io/github-action@v6
         with:
+          install: false
           project: ./BlogListFront
           browser: chrome
-          command: npm run test:e2e
           start: |
             npm run start
             cd ../BlogListApp && npm run start:test
