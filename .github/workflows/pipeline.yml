@@ -56,9 +56,8 @@ jobs:
           install: false
           working-directory: ./BlogListFront
           command: npm run test:e2e
-          browser: chrome
           start: npm start
-          wait-on: 'http://localhost:3003'
+          wait-on: '127.0.0.1:3003'
 
   version_numbering:
     needs: [blogs_deploy_pipeline]
