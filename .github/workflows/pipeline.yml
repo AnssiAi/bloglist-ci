@@ -52,6 +52,8 @@ jobs:
         run: cd BlogListApp && npm run start:test &
       - name: Frontend e2e tests
         uses: cypress-io/github-action@v6
+        env:
+          DEBUG: '@cypress/github-action'
         with:
           install: false
           working-directory: ./BlogListFront
