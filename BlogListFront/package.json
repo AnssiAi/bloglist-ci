@@ -13,10 +13,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test:front": "jest",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "cypress:open": "cypress open"
+    "test:e2e": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -44,7 +44,7 @@
     "@testing-library/jest-dom": "^6.1.2",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "cypress": "^13.2.0",
+    "cypress": "^13.17.0",
     "eslint": "^8.47.0",
     "eslint-plugin-cypress": "^2.14.0",
     "eslint-plugin-jest": "^27.2.3",
