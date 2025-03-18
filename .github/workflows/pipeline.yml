@@ -52,11 +52,13 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           install: false
-          project: ./BlogListFront
+          working-directory: ./BlogListFront
           command: npm run test:e2e
           browser: chrome
-          start: npm run start:test
-          wait-on: http://localhost:3003
+          start: |
+            npm run start:testserver
+            npm start
+          wait-on: 'http://localhost:3003'
 
   version_numbering:
     needs: [blogs_deploy_pipeline]
