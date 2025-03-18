@@ -42,9 +42,9 @@ jobs:
         run: |
           cd BlogListApp
           touch .env
-          echo PORT=3003 > .env
-          echo SECRET=${{ secrets.BLOG_SECRET }} > .env
-          echo TEST_MONGODB_URI=${{ secrets.TEST_MONGODB_URI }} > .env
+          echo PORT=3003 >> .env
+          echo SECRET=${{ secrets.BLOG_SECRET }} >> .env
+          echo TEST_MONGODB_URI=${{ secrets.TEST_MONGODB_URI }} >> .env
           cat .env
       - name: Check Backend Linting
         run: cd BlogListApp && npm run lint
