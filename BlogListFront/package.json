@@ -16,7 +16,7 @@
     "test:front": "jest",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "test:e2e": "cypress open"
+    "test:e2e": "cypress run"
   },
   "eslintConfig": {
     "extends": [
