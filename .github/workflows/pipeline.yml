@@ -48,6 +48,8 @@ jobs:
         run: cd BlogListFront && npm run lint
       - name: Frontend Unit Tests
         run: cd BlogListFront && npm run test:front
+      - name: Start Backend server
+        run: cd BlogListApp && npm run start:test
       - name: Frontend e2e tests
         uses: cypress-io/github-action@v6
         with:
@@ -55,9 +57,7 @@ jobs:
           working-directory: ./BlogListFront
           command: npm run test:e2e
           browser: chrome
-          start: |
-            npm run start:testserver
-            npm start
+          start: npm start
           wait-on: 'http://localhost:3003'
 
   version_numbering:
