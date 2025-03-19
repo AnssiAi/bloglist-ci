@@ -42,6 +42,7 @@ jobs:
         run: |
           cd BlogListApp
           touch .env
+          echo MONGODB_URI=${{ secrets.MONGODB_URI }} >> .env
           echo PORT=3003 >> .env
           echo SECRET=${{ secrets.BLOG_SECRET }} >> .env
           echo TEST_MONGODB_URI=${{ secrets.TEST_MONGODB_URI }} >> .env
