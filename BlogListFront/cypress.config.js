@@ -1,6 +1,7 @@
-import { defineConfig } from 'cypress';
+/* eslint-disable no-undef */
+const { defineConfig } = require('cypress');
 
-export default defineConfig({
+module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here

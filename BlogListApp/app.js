@@ -26,6 +26,7 @@ mongoose
 //Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static('build'));
 
 //Routet
 app.use('/api/blogs', blogsRouter);

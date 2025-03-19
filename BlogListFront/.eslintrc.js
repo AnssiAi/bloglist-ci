@@ -19,7 +19,7 @@ module.exports = {
   plugins: ['react-refresh', 'jest', 'cypress'],
   rules: {
     indent: ['error', 2],
-    'linebreak-style': ['error', 'windows'],
+    'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     eqeqeq: 'error',
