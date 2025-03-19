@@ -1,0 +1,28 @@
+name: Bloglist automatic deploy
+
+on:
+  workflow_run:
+    workflows: ['BlogList Deployment Pipeline']
+    types: [completed]
+    branches: [main]
+
+env:
+  CONDITION: ${{ contains(github.event.workflow_run.head_commit.message, '#skip') }}
+
+jobs:
+  on-success:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Trigger deployment
+        if: ${{ env.CONDITION == 'false' }}
+        run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
+      - name: Is skipped
+        if: ${{ env.CONDITION == 'true' }}
+        run: echo "Deployment is skipped"
+  on-failure:
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Result
+        run: echo "Deployment Pipeline failed"
