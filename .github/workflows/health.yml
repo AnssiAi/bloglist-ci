@@ -2,7 +2,7 @@ name: Bloglist healthcheck
 
 on:
   schedule:
-    - cron: '0/5 * * * *'
+    - cron: '0 23 * * * 0'
 
 jobs:
   health_check_job:
